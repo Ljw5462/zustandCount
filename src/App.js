@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import useStore from './status/store';
 import './App.css';
 
-function App() {
+const App = (props) => {
+  const { isLogin, count, increase, toggleIsLogin, setCnt, clearCnt } =
+      useStore();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          <div>
+              <p>{"" + isLogin}</p>
+              <button onClick={toggleIsLogin}>
+                  <b>click!!!</b>
+              </button>
+          </div>
+          <br></br>
+          <div>
+              <div>Now Count is {count}</div>
+              <button onClick={increase}>+1</button>
+              <button onClick={() => setCnt(100)}>set 100</button>
+              <button onClick={clearCnt}>clear</button>
+          </div>
+      </div>
   );
-}
+};
 
 export default App;
