@@ -6,7 +6,7 @@ const App = (props) => {
       useStore();
 
   return (
-      <div>
+      <>
           <div>
               <p>{"" + isLogin}</p>
               <button onClick={toggleIsLogin}>
@@ -20,7 +20,7 @@ const App = (props) => {
               <button onClick={() => setCnt(100)}>set 100</button>
               <button onClick={clearCnt}>clear</button>
           </div>
-      </div>
+      </>
   );
 };
 
